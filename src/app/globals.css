@@ -1,0 +1,278 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Custom variant for dark mode */
+@custom-variant dark (&:is(.dark *));
+
+/* Theme Configuration */
+@theme {
+  /* Font Families */
+  --font-sans: "Noto Sans Display", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  /* Gradients */
+  --gradient-sunset: linear-gradient(90deg, #FFE8D6 0%, #D1BFFF 100%);
+  --gradient-sunrise: linear-gradient(90deg, #F0E6FF 0%, #D1BFFF 100%);
+  --gradient-sky: linear-gradient(90deg, #E6F3FF 0%, #D1BFFF 100%);
+  --gradient-deep-blue: linear-gradient(90deg, #E6FFE6 0%, #D1BFFF 100%);
+  --gradient-forest: linear-gradient(90deg, #FFFAE6 0%, #D1BFFF 100%);
+  --gradient-purple-dream: linear-gradient(90deg, #FFE6E6 0%, #D1BFFF 100%);
+
+  /* Inline Theme Variables for Shadcn/UI */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-text-body: var(--text-body);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Custom animations */
+  --animate-fade-in: fade-in 0.6s ease-out;
+  --animate-slide-up: slide-up 0.4s ease-out;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+/* Root & Dark Mode Variables */
+:root {
+  --radius: 0.5rem;
+  --nav-height: 8vh;
+
+  /* Light Mode Palette */
+  --background: #F0F0F2; /* Athens Gray */
+  --foreground: #18172B; /* Mirage */
+  --card: #FFFFFF;
+  --card-foreground: #18172B;
+  --popover: #FFFFFF;
+  --popover-foreground: #18172B;
+  --primary: #4840BB; /* Governor Bay */
+  --primary-foreground: #FFFFFF;
+  --text-body: #2F2978; /* Darker shade of primary for body text */
+  --secondary: #5B8A5A; /* Sage green */
+  --secondary-foreground: #FFFFFF;
+  --muted: #F0F0F2;
+  --muted-foreground: #18172B;
+  --destructive: #FF4C4C;
+  --border: #D1D1D1;
+  --input: #FFFFFF;
+  --ring: #4840BB;
+}
+
+.dark {
+  --radius: 0.5rem;
+
+  /* Dark Mode Palette */
+  --background: #18172B; /* Mirage */
+  --foreground: #F0F0F2; /* Athens Gray */
+  --card: #2A2A2A;
+  --card-foreground: #F0F0F2;
+  --popover: #2A2A2A;
+  --popover-foreground: #F0F0F2;
+  --primary: #4840BB; /* Governor Bay */
+  --primary-foreground: #FFFFFF;
+  --text-body: #6B5FCF; /* Lighter shade of primary for dark mode body text */
+  --secondary: #5B8A5A; /* Sage green */
+  --secondary-foreground: #FFFFFF;
+  --muted: #2A2A2A;
+  --muted-foreground: #F0F0F2;
+  --destructive: #FF4C4C;
+  --border: #D1D1D1;
+  --input: #2A2A2A;
+  --ring: #4840BB;
+}
+
+/* Custom Keyframes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background: linear-gradient(180deg, #4840BB 0%, #4840BB80 50%, #4840BB33 100%);
+  }
+  33% {
+    background: linear-gradient(180deg, #5B8A5A 0%, #5B8A5A80 50%, #5B8A5A33 100%);
+  }
+  66% {
+    background: linear-gradient(180deg, #4840BB 0%, #4840BB80 50%, #4840BB33 100%);
+  }
+  100% {
+    background: linear-gradient(180deg, #4840BB 0%, #4840BB80 50%, #4840BB33 100%);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Base Layer Styles */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-[var(--text-body)] font-sans tracking-[-0.01em];
+  }
+  h1 {
+    @apply font-sans text-5xl font-black text-primary tracking-tight;
+  }
+  h2 {
+    @apply font-sans text-4xl font-bold text-primary tracking-tight;
+  }
+  h3 {
+    @apply font-sans text-3xl font-bold text-primary tracking-tight;
+  }
+  h4 {
+    @apply font-sans text-2xl font-bold text-primary tracking-tight;
+  }
+  h5 {
+    @apply font-sans text-xl font-semibold text-primary tracking-tight;
+  }
+  h6 {
+    @apply font-sans text-lg font-semibold text-primary tracking-tight;
+  }
+  p {
+    @apply text-[var(--text-body)] text-base leading-relaxed font-sans;
+  }
+  a {
+    @apply font-serif text-primary font-semibold hover:underline;
+  }
+  ul, ol {
+    @apply list-disc list-inside text-[var(--text-body)] leading-relaxed;
+  }
+  blockquote {
+    @apply border-l-4 border-muted pl-4 italic text-muted-foreground font-serif;
+  }
+  code {
+    @apply font-mono bg-muted px-1 py-0.5 rounded text-sm;
+  }
+  .serif-heading {
+    @apply font-serif leading-relaxed;
+  }
+  .gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+  .gradient-sunrise {
+    background: var(--gradient-sunrise);
+  }
+  .gradient-sky {
+    background: var(--gradient-sky);
+  }
+  .gradient-deep-blue {
+    background: var(--gradient-deep-blue);
+  }
+  .gradient-forest {
+    background: var(--gradient-forest);
+  }
+  .gradient-purple-dream {
+    background: var(--gradient-purple-dream);
+  }
+  .hover\:gradient-sunset:hover {
+    background: var(--gradient-sunset);
+  }
+  .hover\:gradient-sunrise:hover {
+    background: var(--gradient-sunrise);
+  }
+  .hover\:gradient-sky:hover {
+    background: var(--gradient-sky);
+  }
+  .hover\:gradient-deep-blue:hover {
+    background: var(--gradient-deep-blue);
+  }
+  .hover\:gradient-forest:hover {
+    background: var(--gradient-forest);
+  }
+  .hover\:gradient-purple-dream:hover {
+    background: var(--gradient-purple-dream);
+  }
+  .solid-shadow {
+    box-shadow: 3px 3px 0px var(--primary);
+  }
+
+  /* Custom Animation Classes */
+  .animate-fade-in {
+    animation: var(--animate-fade-in);
+  }
+  .animate-slide-up {
+    animation: var(--animate-slide-up);
+  }
+  .animate-float {
+    animation: var(--animate-float);
+  }
+  .animate-gradient-flow {
+    background-size: 200% 200%;
+    animation: gradient-flow 4s ease-in-out infinite;
+  }
+  .animate-gradient-shift {
+    animation: gradient-shift 8s ease-in-out infinite;
+  }
+  .animate-marquee {
+    animation: marquee 90s linear infinite;
+  }
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+}
