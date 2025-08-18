@@ -152,7 +152,7 @@ export default function Hero() {
           <div className="w-full lg:w-1/2 flex items-center justify-center order-1 lg:order-2">
             <div className="relative">
               <div className="border-4 border-primary solid-shadow rounded-t-full rounded-b-full aspect-[4/5] sm:aspect-[2/3] overflow-hidden max-w-[120px] sm:max-w-[240px] md:max-w-[280px]">
-                <Image src="/images/beanie.JPG" alt="Profile photo" width={280} height={420} />
+                <Image src="/images/hero.jpg" alt="Profile photo" width={280} height={420} />
               </div>
               <Badge variant="outline" className="bg-[#D1BFFF] italic !px-4 !py-1.5 sm:!px-6 sm:!py-2 font-light absolute bottom-4 left-1/2 -translate-x-1/2 sm:bottom-8 sm:-right-8 sm:translate-x-0 sm:left-auto whitespace-nowrap text-base sm:text-xl font-serif border-2 border-primary solid-shadow">
                 Adolfo López Herrera
