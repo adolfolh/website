@@ -87,13 +87,13 @@ export default function StickyNav() {
           <div className="flex w-full h-full border border-primary">
             <button
               onClick={() => handleScrollToSection('about')}
-              className={getButtonClass('about', 'gradient-sunset')}
+              className={getButtonClass('about', 'gradient-1')}
             >
               About
             </button>
             <button
               onClick={() => handleScrollToSection('contact')}
-              className={getButtonClass('contact', 'gradient-sunrise')}
+              className={getButtonClass('contact', 'gradient-1')}
             >
               Contact
             </button>

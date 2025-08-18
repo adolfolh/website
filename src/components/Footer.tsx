@@ -8,7 +8,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="w-full gradient-purple-dream py-16 sm:py-20 px-6 sm:px-12 border-b border-l border-r border-primary">
+    <footer className="w-full gradient-1 py-16 sm:py-20 px-6 sm:px-12 border-b border-l border-r border-primary">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="font-black text-4xl sm:text-5xl md:text-6xl tracking-[-0.07em] leading-[0.8]">
           Let&apos;s Create

@@ -9,14 +9,13 @@
   /* Font Families */
   --font-sans: "Noto Sans Display", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   --font-serif: "Playfair Display", serif;
-
   /* Gradients */
-  --gradient-sunset: linear-gradient(90deg, #FFE8D6 0%, #D1BFFF 100%);
-  --gradient-sunrise: linear-gradient(90deg, #F0E6FF 0%, #D1BFFF 100%);
-  --gradient-sky: linear-gradient(90deg, #E6F3FF 0%, #D1BFFF 100%);
-  --gradient-deep-blue: linear-gradient(90deg, #E6FFE6 0%, #D1BFFF 100%);
-  --gradient-forest: linear-gradient(90deg, #FFFAE6 0%, #D1BFFF 100%);
-  --gradient-purple-dream: linear-gradient(90deg, #FFE6E6 0%, #D1BFFF 100%);
+  --gradient-1: linear-gradient(90deg, #e557431a 0%, #f2f2f2 100%);
+  --gradient-2: linear-gradient(90deg, #e557431a 0%, #f2f2f2 100%);
+  --gradient-3: linear-gradient(90deg, #e557431a 0%, #f2f2f2 100%);
+  --gradient-4: linear-gradient(90deg, #e557431a 0%, #f2f2f2 100%);
+  --gradient-5: linear-gradient(90deg, #e557431a 0%, #f2f2f2 100%);
+  --gradient-6: linear-gradient(90deg, #e557431a 0%, #f2f2f2 100%);
 
   /* Inline Theme Variables for Shadcn/UI */
   --color-background: var(--background);
@@ -55,46 +54,54 @@
   --nav-height: 8vh;
 
   /* Light Mode Palette */
-  --background: #F0F0F2; /* Athens Gray */
-  --foreground: #18172B; /* Mirage */
-  --card: #FFFFFF;
-  --card-foreground: #18172B;
-  --popover: #FFFFFF;
-  --popover-foreground: #18172B;
-  --primary: #4840BB; /* Governor Bay */
-  --primary-foreground: #FFFFFF;
-  --text-body: #2F2978; /* Darker shade of primary for body text */
-  --secondary: #5B8A5A; /* Sage green */
-  --secondary-foreground: #FFFFFF;
-  --muted: #F0F0F2;
-  --muted-foreground: #18172B;
+  --background: #f2f2f2; /* Light Gray */
+  --foreground: #272727; /* Dark Gray */
+  --card: #ffffff;
+  --card-foreground: #272727;
+  --popover: #ffffff;
+  --popover-foreground: #272727;
+  --primary: #e55743; /* Orange Red */
+  --primary-foreground: #ffffff;
+  --text-body: #333333; /* Darker shade for body text */
+  --secondary: #3c8a87; /* Greenish Cyan */
+  --secondary-foreground: #ffffff;
+  --muted: #f0f0f0;
+  --muted-foreground: #555555;
   --destructive: #FF4C4C;
-  --border: #D1D1D1;
-  --input: #FFFFFF;
-  --ring: #4840BB;
+  --border: #d1d1d1;
+  --input: #ffffff;
+  --ring: #e55743;
 }
 
 .dark {
   --radius: 0.5rem;
 
-  /* Dark Mode Palette */
-  --background: #18172B; /* Mirage */
-  --foreground: #F0F0F2; /* Athens Gray */
-  --card: #2A2A2A;
-  --card-foreground: #F0F0F2;
-  --popover: #2A2A2A;
-  --popover-foreground: #F0F0F2;
-  --primary: #4840BB; /* Governor Bay */
-  --primary-foreground: #FFFFFF;
-  --text-body: #6B5FCF; /* Lighter shade of primary for dark mode body text */
-  --secondary: #5B8A5A; /* Sage green */
-  --secondary-foreground: #FFFFFF;
-  --muted: #2A2A2A;
-  --muted-foreground: #F0F0F2;
-  --destructive: #FF4C4C;
-  --border: #D1D1D1;
-  --input: #2A2A2A;
-  --ring: #4840BB;
+  /* Dark Mode Palette from happyhues.co/palettes/4 */
+  --background: #16161a;
+  --foreground: #fffffe;
+  --card: #242629;
+  --card-foreground: #fffffe;
+  --popover: #242629;
+  --popover-foreground: #fffffe;
+  --primary: #7f5af0;
+  --primary-foreground: #fffffe;
+  --text-body: #94a1b2;
+  --secondary: #2cb67d;
+  --secondary-foreground: #fffffe;
+  --muted: #242629;
+  --muted-foreground: #94a1b2;
+  --destructive: #FF4C4C; /* Kept from previous theme */
+  --border: #3a3a3a; /* A slightly lighter shade for borders */
+  --input: #242629;
+  --ring: #7f5af0;
+
+  /* Dark Gradients */
+  --gradient-1: linear-gradient(90deg, #7f5af01a 0%, #16161a 100%);
+  --gradient-2: linear-gradient(90deg, #7f5af01a 0%, #16161a 100%);
+  --gradient-3: linear-gradient(90deg, #7f5af01a 0%, #16161a 100%);
+  --gradient-4: linear-gradient(90deg, #7f5af01a 0%, #16161a 100%);
+  --gradient-5: linear-gradient(90deg, #7f5af01a 0%, #16161a 100%);
+  --gradient-6: linear-gradient(90deg, #7f5af01a 0%, #16161a 100%);
 }
 
 /* Custom Keyframes */
@@ -143,16 +150,16 @@
 
 @keyframes gradient-shift {
   0% {
-    background: linear-gradient(180deg, #4840BB 0%, #4840BB80 50%, #4840BB33 100%);
+    background: linear-gradient(180deg, #e55743 0%, #e5574380 50%, #e5574333 100%);
   }
   33% {
-    background: linear-gradient(180deg, #5B8A5A 0%, #5B8A5A80 50%, #5B8A5A33 100%);
+    background: linear-gradient(180deg, #3c8a87 0%, #3c8a8780 50%, #3c8a8733 100%);
   }
   66% {
-    background: linear-gradient(180deg, #4840BB 0%, #4840BB80 50%, #4840BB33 100%);
+    background: linear-gradient(180deg, #e55743 0%, #e5574380 50%, #e5574333 100%);
   }
   100% {
-    background: linear-gradient(180deg, #4840BB 0%, #4840BB80 50%, #4840BB33 100%);
+    background: linear-gradient(180deg, #e55743 0%, #e5574380 50%, #e5574333 100%);
   }
 }
 
@@ -177,22 +184,22 @@
     @apply bg-background text-[var(--text-body)] font-sans tracking-[-0.01em];
   }
   h1 {
-    @apply font-sans text-5xl font-black text-primary tracking-tight;
+    @apply font-sans text-5xl font-black text-foreground tracking-tight;
   }
   h2 {
-    @apply font-sans text-4xl font-bold text-primary tracking-tight;
+    @apply font-sans text-4xl font-bold text-foreground tracking-tight;
   }
   h3 {
-    @apply font-sans text-3xl font-bold text-primary tracking-tight;
+    @apply font-sans text-3xl font-bold text-foreground tracking-tight;
   }
   h4 {
-    @apply font-sans text-2xl font-bold text-primary tracking-tight;
+    @apply font-sans text-2xl font-bold text-foreground tracking-tight;
   }
   h5 {
-    @apply font-sans text-xl font-semibold text-primary tracking-tight;
+    @apply font-sans text-xl font-semibold text-foreground tracking-tight;
   }
   h6 {
-    @apply font-sans text-lg font-semibold text-primary tracking-tight;
+    @apply font-sans text-lg font-semibold text-foreground tracking-tight;
   }
   p {
     @apply text-[var(--text-body)] text-base leading-relaxed font-sans;
@@ -212,41 +219,41 @@
   .serif-heading {
     @apply font-serif leading-relaxed;
   }
-  .gradient-sunset {
-    background: var(--gradient-sunset);
+  .gradient-1 {
+    background: var(--gradient-1);
   }
-  .gradient-sunrise {
-    background: var(--gradient-sunrise);
+  .gradient-2 {
+    background: var(--gradient-2);
   }
-  .gradient-sky {
-    background: var(--gradient-sky);
+  .gradient-3 {
+    background: var(--gradient-3);
   }
-  .gradient-deep-blue {
-    background: var(--gradient-deep-blue);
+  .gradient-4 {
+    background: var(--gradient-4);
   }
-  .gradient-forest {
-    background: var(--gradient-forest);
+  .gradient-5 {
+    background: var(--gradient-5);
   }
-  .gradient-purple-dream {
-    background: var(--gradient-purple-dream);
+  .gradient-6 {
+    background: var(--gradient-6);
   }
-  .hover\:gradient-sunset:hover {
-    background: var(--gradient-sunset);
+  .hover\:gradient-1:hover {
+    background: var(--gradient-1);
   }
-  .hover\:gradient-sunrise:hover {
-    background: var(--gradient-sunrise);
+  .hover\:gradient-2:hover {
+    background: var(--gradient-2);
   }
-  .hover\:gradient-sky:hover {
-    background: var(--gradient-sky);
+  .hover\:gradient-3:hover {
+    background: var(--gradient-3);
   }
-  .hover\:gradient-deep-blue:hover {
-    background: var(--gradient-deep-blue);
+  .hover\:gradient-4:hover {
+    background: var(--gradient-4);
   }
-  .hover\:gradient-forest:hover {
-    background: var(--gradient-forest);
+  .hover\:gradient-5:hover {
+    background: var(--gradient-5);
   }
-  .hover\:gradient-purple-dream:hover {
-    background: var(--gradient-purple-dream);
+  .hover\:gradient-6:hover {
+    background: var(--gradient-6);
   }
   .solid-shadow {
     box-shadow: 3px 3px 0px var(--primary);

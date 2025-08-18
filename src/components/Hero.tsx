@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { ModeToggle } from "./ThemeToggle";
 
 export default function Hero() {
 
@@ -110,7 +111,10 @@ export default function Hero() {
   ];
 
   return (
-    <section className="flex-grow border border-primary border-b-0 w-full gradient-sunrise py-8 md:py-16 flex flex-col overflow-hidden">
+    <section className="flex-grow border border-primary border-b-0 w-full gradient-1 py-8 md:py-16 flex flex-col overflow-hidden relative">
+      <div className="absolute top-4 right-4">
+        <ModeToggle />
+      </div>
       {/* Main hero content - two column layout */}
       <div className="flex-1 flex flex-col lg:flex-row items-center gap-8 px-6 md:px-12">
         {/* Left side - Hero content */}
@@ -151,10 +155,11 @@ export default function Hero() {
           {/* Right side */}
           <div className="w-full lg:w-1/2 flex items-center justify-center order-1 lg:order-2">
             <div className="relative">
+              <div className="absolute -top-4 -left-4 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-full blur-3xl animate-pulse [animation-delay:2s]"></div>
               <div className="border-4 border-primary solid-shadow rounded-t-full rounded-b-full aspect-[4/5] sm:aspect-[2/3] overflow-hidden max-w-[120px] sm:max-w-[240px] md:max-w-[280px]">
                 <Image src="/images/hero.jpg" alt="Profile photo" width={280} height={420} />
               </div>
-              <Badge variant="outline" className="bg-[#D1BFFF] italic !px-4 !py-1.5 sm:!px-6 sm:!py-2 font-light absolute bottom-4 left-1/2 -translate-x-1/2 sm:bottom-8 sm:-right-8 sm:translate-x-0 sm:left-auto whitespace-nowrap text-base sm:text-xl font-serif border-2 border-primary solid-shadow">
+              <Badge variant="outline" className="bg-background text-primary italic !px-4 !py-1.5 sm:!px-6 sm!py-2 font-light absolute bottom-4 left-1/2 -translate-x-1/2 sm:bottom-8 sm:-right-8 sm:translate-x-0 sm:left-auto whitespace-nowrap text-base sm:text-xl font-serif border-2 border-primary solid-shadow">
                 Adolfo López Herrera
               </Badge>
             </div>
@@ -181,8 +186,8 @@ export default function Hero() {
                       </Badge>
                     </div>
                   </TooltipTrigger>
-                  <TooltipContent side="top" className="max-w-xs bg-primary text-white border-primary">
-                    <p className="text-sm text-white">{interest.reason}</p>
+                  <TooltipContent side="top" className="max-w-xs bg-popover text-popover-foreground border-border">
+                    <p className="text-sm">{interest.reason}</p>
                   </TooltipContent>
                 </Tooltip>
               );
