@@ -357,7 +357,7 @@ export default function About() {
       leftContent={leftContent}
       rightContent={rightContent}
       sectionIndex={0}
-      gradientClass="gradient-sunset"
+      gradientClass="gradient-1"
       className=""
     />
   );

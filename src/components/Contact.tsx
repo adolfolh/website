@@ -67,7 +67,7 @@ export default function Contact() {
       leftContent={leftContent}
       rightContent={rightContent}
       sectionIndex={3}
-      gradientClass="gradient-deep-blue"
+      gradientClass="gradient-2"
     />
   );
 }
